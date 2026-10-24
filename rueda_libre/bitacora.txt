@@ -1,0 +1,55 @@
+Bitácora del proyecto: Rueda Libre
+Nombre del proyecto: Rueda Libre
+Tema: Página web para el alquiler de bicicletas en Medellín.
+
+1. Objetivo del proyecto
+Crear una página web informativa para promocionar el alquiler de bicicletas, los talleres básicos y los recorridos guiados en Medellín.
+
+2. Desarrollo del primer código: Página principal (index.html)
+
+Se creó la estructura básica de HTML con html, head y body.
+
+Se agregó el título de la página: Rueda Libre.
+
+Se incluyó el logotipo y las imágenes relacionadas con las bicicletas.
+
+Se presentó información sobre la empresa y su compromiso con la movilidad sostenible.
+
+Se describieron los servicios de alquiler, talleres y recorridos guiados.
+
+Se agregaron listas ordenadas y desordenadas con los pasos para alquilar y sus beneficios.
+
+Se incluyeron enlaces para consultar las tarifas, los recorridos, la ubicación y el correo electrónico.
+
+Se añadió información sobre los horarios de atención y la ubicación del negocio.
+
+3. Desarrollo del segundo código: Tarifas (tarifas.html)
+
+Se creó una página secundaria con un enlace para regresar a la página principal.
+
+Se agregó el logotipo de la empresa.
+
+Se elaboraron tablas HTML para mostrar los precios del alquiler de bicicletas urbanas, de montaña y eléctricas.
+
+Se creó una segunda tabla con los recorridos guiados, sus distancias, duraciones, niveles y precios.
+
+Se añadió información sobre los elementos incluidos en el alquiler y los horarios de salida.
+
+Se incorporó una lista de los artículos recomendados para los recorridos.
+
+4. Herramientas y etiquetas utilizadas
+
+HTML para estructurar el contenido.
+
+Etiquetas de encabezado: h1, h2, h3 y h4.
+
+Etiquetas de texto: p y strong.
+
+Etiquetas de listas: ul, ol y li.
+
+Etiquetas de enlaces e imágenes: a e img.
+
+Etiquetas de tablas: table, thead, tbody, tr, th, td y caption.
+
+5. Conclusión
+Con estos dos códigos se construyó una página web sencilla y organizada para Rueda Libre. La página principal presenta la empresa y sus servicios, mientras que la página de tarifas permite consultar los precios y los detalles de los recorridos. Se practicó el uso de etiquetas HTML, enlaces internos y externos, imágenes, listas y tablas.
