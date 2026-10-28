@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comparación CSS y Bootstrap | Rueda Libre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+    <nav aria-label="Navegación de comparación">
+        <a href="index.html">Inicio de Rueda Libre</a>
+        <a href="comparacion-css.html" class="activo">Comparación CSS y Bootstrap</a>
+    </nav>
+    <main id="contenido-principal" tabindex="-1">
+        <h1>CSS propio y Bootstrap</h1>
+        <p>Ambos ejemplos muestran la misma flota adaptable. El primero usa las clases Grid propias del sitio; el segundo, las filas, columnas y utilidades de Bootstrap.</p>
+
+        <h2>Versión con CSS propio: Grid</h2>
+        <section class="servicios" aria-label="Tarjetas con CSS propio">
+            <article class="servicio">
+                <h3>Urbana</h3>
+                <p>Ligera y cómoda para moverte por la ciudad.</p>
+                <img src="img/urbana.jpeg" alt="Bicicleta urbana">
+            </article>
+            <article class="servicio">
+                <h3>Montaña</h3>
+                <p>Lista para rutas y terrenos exigentes.</p>
+                <img src="img/montaña1.jpeg" alt="Bicicleta de montaña">
+            </article>
+            <article class="servicio">
+                <h3>Eléctrica</h3>
+                <p>Más asistencia para llegar más lejos.</p>
+                <img src="img/electrica.jpeg" alt="Bicicleta eléctrica">
+            </article>
+        </section>
+
+        <h2>Versión con Bootstrap: grilla y utilidades</h2>
+        <section class="container-fluid px-0" aria-label="Tarjetas con Bootstrap">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                <div class="col"><article class="card h-100"><img src="img/urbana.jpeg" class="card-img-top p-3" alt="Bicicleta urbana"><div class="card-body"><h3 class="card-title h5">Urbana</h3><p class="card-text">Ligera y cómoda para moverte por la ciudad.</p></div></article></div>
+                <div class="col"><article class="card h-100"><img src="img/montaña1.jpeg" class="card-img-top p-3" alt="Bicicleta de montaña"><div class="card-body"><h3 class="card-title h5">Montaña</h3><p class="card-text">Lista para rutas y terrenos exigentes.</p></div></article></div>
+                <div class="col"><article class="card h-100"><img src="img/electrica.jpeg" class="card-img-top p-3" alt="Bicicleta eléctrica"><div class="card-body"><h3 class="card-title h5">Eléctrica</h3><p class="card-text">Más asistencia para llegar más lejos.</p></div></article></div>
+            </div>
+        </section>
+        <p class="mt-4"><a href="index.html">Volver a la página principal</a></p>
+    </main>
+    <footer><p>Rueda Libre · Comparación de layouts adaptables</p></footer>
+</body>
+</html>

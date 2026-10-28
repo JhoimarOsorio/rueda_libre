@@ -1,0 +1,134 @@
+Bitácora del proyecto: Rueda Libre
+Nombre del proyecto: Rueda Libre
+Tema: Página web para el alquiler de bicicletas en Medellín.
+
+1. Objetivo del proyecto
+Crear una página web informativa para promocionar el alquiler de bicicletas, los talleres básicos y los recorridos guiados en Medellín.
+
+2. Desarrollo del primer código: Página principal (index.html)
+
+Se creó la estructura básica de HTML con html, head y body.
+
+Se agregó el título de la página: Rueda Libre.
+
+Se incluyó el logotipo y las imágenes relacionadas con las bicicletas.
+
+Se presentó información sobre la empresa y su compromiso con la movilidad sostenible.
+
+Se describieron los servicios de alquiler, talleres y recorridos guiados.
+
+Se agregaron listas ordenadas y desordenadas con los pasos para alquilar y sus beneficios.
+
+Se incluyeron enlaces para consultar las tarifas, los recorridos, la ubicación y el correo electrónico.
+
+Se añadió información sobre los horarios de atención y la ubicación del negocio.
+
+3. Desarrollo del segundo código: Tarifas (tarifas.html)
+
+Se creó una página secundaria con un enlace para regresar a la página principal.
+
+Se agregó el logotipo de la empresa.
+
+Se elaboraron tablas HTML para mostrar los precios del alquiler de bicicletas urbanas, de montaña y eléctricas.
+
+Se creó una segunda tabla con los recorridos guiados, sus distancias, duraciones, niveles y precios.
+
+Se añadió información sobre los elementos incluidos en el alquiler y los horarios de salida.
+
+Se incorporó una lista de los artículos recomendados para los recorridos.
+
+4. Herramientas y etiquetas utilizadas
+
+HTML para estructurar el contenido.
+
+Etiquetas de encabezado: h1, h2, h3 y h4.
+
+Etiquetas de texto: p y strong.
+
+Etiquetas de listas: ul, ol y li.
+
+Etiquetas de enlaces e imágenes: a e img.
+
+Etiquetas de tablas: table, thead, tbody, tr, th, td y caption.
+
+5. Conclusión
+Con estos dos códigos se construyó una página web sencilla y organizada para Rueda Libre. La página principal presenta la empresa y sus servicios, mientras que la página de tarifas permite consultar los precios y los detalles de los recorridos. Se practicó el uso de etiquetas HTML, enlaces internos y externos, imágenes, listas y tablas.
+
+6. Esquema de regiones y controles HTML
+
+Las páginas usan las regiones header (marca y navegación), nav (menú principal), main (contenido único de la página) y footer (contacto y datos del negocio). Los contenidos se agrupan en section y article con encabezados en orden.
+
+La navegación móvil se abre con un checkbox HTML asociado a la etiqueta “Menú”; el teclado puede enfocarlo y alternar su estado. Las casillas de las bicicletas permiten seleccionar varias opciones. Los formularios usan controles nativos, etiquetas asociadas y atributos required, minlength, maxlength, pattern, min y max para validación del navegador. La sección de promociones usa botones de opción HTML y etiquetas para cambiar de tarjeta sin JavaScript. El ejemplo de modal de reservas se abre y se cierra con enlaces a fragmentos de la página y CSS.
+
+La página no incluye JavaScript. Sin un servidor no se pueden almacenar ni enviar reservas o mensajes, ni crear una confirmación que lea los datos del formulario. La sección del modal es una demostración visual y lo explica.
+
+7. Pruebas de validación de formularios
+
+Campo | Regla HTML | Resultado esperado
+Nombre | required, mínimo 2 caracteres | El navegador impide continuar si falta o es demasiado corto.
+Teléfono | required, patrón de 7 a 15 dígitos | El navegador rechaza letras, espacios y longitudes fuera del patrón.
+Correo | required, type=email | El navegador pide un correo con formato válido.
+Tipo de bicicleta | casillas checkbox con el mismo name | Se pueden escoger varias bicicletas; no es posible exigir “al menos una de varias casillas” solo con HTML estándar.
+Duración, fecha y hora | required y controles nativos | El navegador solicita completar cada campo.
+Cantidad | required, mínimo 1 y máximo 10 | El navegador rechaza números fuera del rango.
+Asunto | required y opción inicial deshabilitada | El navegador solicita una opción.
+Mensaje | required, mínimo 10 y máximo 1000 caracteres | El navegador rechaza texto vacío, corto o demasiado largo.
+
+Alcance de la prueba: las restricciones se expresan en HTML y las evalúa el navegador; el sitio estático no persiste ni procesa formularios.
+
+8. Auditoría de accesibilidad y correcciones
+
+Fecha: 27/10/2026. Revisión manual de las cinco páginas HTML, imágenes y navegación con teclado.
+
+Hallazgo 1: faltaba un enlace para saltar directamente al contenido principal. Corrección: se añadió “Saltar al contenido principal” al inicio de cada página, visible al enfocarlo, con destino al main.
+Hallazgo 2: el menú móvil requería un control identificable y operable por teclado. Corrección: se mantuvo el checkbox HTML con etiqueta “Menú”, nombre accesible, aria-controls e indicador de foco; los enlaces se mantienen visibles en escritorio.
+Hallazgo 3: las promociones ocultas podían dejar enlaces fuera de vista en el recorrido de teclado. Corrección: se cambió la fila deslizante por tarjetas superpuestas; las no seleccionadas usan visibility:hidden sin retraso, no reciben foco y cada opción del carrusel tiene nombre accesible.
+Hallazgo 4: algunos enlaces de acción eran ambiguos fuera de su tarjeta (“Escríbenos”, “Ver recorridos”, “Reserva ahora”). Corrección: se cambiaron por “Contacta para el taller”, “Consultar recorridos guiados” y “Reserva una bicicleta”.
+Hallazgo 5: el ejemplo CSS de modal declaraba aria-modal aunque no podía limitar el foco. Corrección: se retiraron role=dialog y aria-modal; el panel se identifica como sección, recibe foco por fragmento y advierte que no envía datos.
+Hallazgo 6: no había skip link en la página comparativa y los nombres de navegación eran poco descriptivos. Corrección: se añadió el enlace para saltar al contenido, se nombraron las regiones nav y se aclararon los enlaces de comparación.
+
+Hallazgo 7: al probar el salto con teclado, el destino main no recibía el foco porque no era enfocable. Corrección: se añadió tabindex="-1" al main de cada página; el enlace ahora mueve el foco al contenido principal sin añadirlo al orden normal de tabulación.
+
+Comprobaciones: las cinco páginas HTML declaran lang="es", tienen un solo main, un h1 y no presentan saltos en la jerarquía de encabezados. Todas las imágenes tienen atributo alt y cargan localmente; los logos que repiten la marca junto al texto usan alt vacío. Los campos de formulario tienen label y las opciones de bicicletas tienen nombres que identifican su categoría y opción. No se encontraron scripts. Se verificaron los tamaños móvil y escritorio, sin desbordamiento horizontal.
+
+Pruebas interactivas finales | Resultado
+Teclado, menú móvil a 390 px: enfocar el control y pulsar espacio abre el menú | Aprobado
+Teclado, salto al contenido en Reservas: pulsar Enter enfoca main | Aprobado
+Teclado, promociones: flecha derecha cambia la opción y el enlace de la tarjeta oculta no recibe foco | Aprobado
+Formulario de reservas: los campos tienen etiquetas, el formulario vacío es inválido y hay 11 casillas de bicicleta | Aprobado
+Navegación a 1280 px y 390 px: enlaces disponibles según el diseño y sin desbordamiento horizontal | Aprobado
+
+9. Validación de contraste de la paleta de marca
+
+Verificador: WebAIM Contrast Checker (API oficial), WCAG AA: https://webaim.org/resources/contrastchecker/
+Criterios: texto normal apto desde 4.5:1; texto grande apto desde 3:1. Si no alcanza 3:1, no es apto ni siquiera para texto grande.
+
+Texto / fondo | Relación | Clasificación
+Blanco #FFFFFF sobre Verde Ruta #1E7A4F | 5.31:1 | Apta para texto normal
+Blanco #FFFFFF sobre Naranja Pedal #F39A2B | 2.21:1 | No apta
+Azul Noche #14213D sobre Naranja Pedal #F39A2B | 7.20:1 | Apta para texto normal
+Azul Noche #14213D sobre Crema #FAF6EF | 14.8:1 | Apta para texto normal
+Gris Asfalto #5B6470 sobre Crema #FAF6EF | 5.56:1 | Apta para texto normal
+Verde Ruta #1E7A4F sobre Crema #FAF6EF | 4.93:1 | Apta para texto normal
+Naranja Pedal #F39A2B sobre Crema #FAF6EF | 2.05:1 | No apta
+Blanco #FFFFFF sobre Azul Noche #14213D | 15.9:1 | Apta para texto normal
+
+Mapa de uso de color propuesto para aplicar en el siguiente reto CSS:
+- Fondo general: Crema #FAF6EF.
+- Títulos y encabezados: Azul Noche #14213D.
+- Texto principal: Azul Noche #14213D; texto secundario: Gris Asfalto #5B6470.
+- Botón principal: Verde Ruta #1E7A4F con texto blanco.
+- Botón secundario: Naranja Pedal #F39A2B con texto Azul Noche #14213D. No usar texto blanco sobre naranja.
+- Enlaces: Verde Ruta #1E7A4F sobre Crema y subrayados para no depender solo del color.
+- Naranja Pedal se reserva para fondos de controles secundarios, bordes y acentos; no usarlo como texto sobre Crema.
+
+La paleta se documenta ahora; sus variables y aplicación visual quedan para el reto CSS siguiente.
+
+10. Publicación v0.2
+
+Repositorio identificado: https://github.com/JhoimarOsorio/rueda_libre.
+URL prevista de GitHub Pages: https://jhoimarosorio.github.io/rueda_libre/ (aún no publicada; no compartir como sitio disponible).
+Descripción del repositorio: actualmente vacía; falta agregar la URL pública después de habilitar Pages.
+Estado: GitHub Pages ya está habilitado para la rama main y la raíz del repositorio. Antes de sincronizar esta versión, la raíz pública mostraba solo el README y la versión anterior estaba en una subcarpeta; esa copia incluía JavaScript y no tenía las fotografías de bicicletas.
+Pendientes para publicar: enviar a main la versión auditada, organizada en la raíz y con las imágenes; actualizar la descripción del repositorio con la URL pública y verificar las tres páginas, sus imágenes y enlaces una vez finalice la compilación.
+Verificación en línea: la configuración de Pages se comprobó en GitHub. La nueva versión aún no está publicada ni verificada. En local se comprobó que las imágenes y rutas a CSS existen; las rutas con espacios y caracteres acentuados están codificadas en HTML para evitar errores de mayúsculas/minúsculas o URL.
