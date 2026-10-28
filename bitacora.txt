@@ -127,8 +127,8 @@ La paleta se documenta ahora; sus variables y aplicación visual quedan para el 
 10. Publicación v0.2
 
 Repositorio identificado: https://github.com/JhoimarOsorio/rueda_libre.
-URL prevista de GitHub Pages: https://jhoimarosorio.github.io/rueda_libre/ (aún no publicada; no compartir como sitio disponible).
-Descripción del repositorio: actualmente vacía; falta agregar la URL pública después de habilitar Pages.
-Estado: GitHub Pages ya está habilitado para la rama main y la raíz del repositorio. Antes de sincronizar esta versión, la raíz pública mostraba solo el README y la versión anterior estaba en una subcarpeta; esa copia incluía JavaScript y no tenía las fotografías de bicicletas.
-Pendientes para publicar: enviar a main la versión auditada, organizada en la raíz y con las imágenes; actualizar la descripción del repositorio con la URL pública y verificar las tres páginas, sus imágenes y enlaces una vez finalice la compilación.
-Verificación en línea: la configuración de Pages se comprobó en GitHub. La nueva versión aún no está publicada ni verificada. En local se comprobó que las imágenes y rutas a CSS existen; las rutas con espacios y caracteres acentuados están codificadas en HTML para evitar errores de mayúsculas/minúsculas o URL.
+URL pública de GitHub Pages: https://jhoimarosorio.github.io/rueda_libre/
+Repositorio: https://github.com/JhoimarOsorio/rueda_libre.
+Descripción del repositorio: “Sitio accesible de bicicletas, reservas y rutas en Medellin: https://jhoimarosorio.github.io/rueda_libre/”.
+Publicación: rama main, raíz del repositorio. Commit de publicación: 79147f3693cf3dd54726d895d98c49afa19aa906. El despliegue de GitHub Pages terminó correctamente.
+Verificación en línea (27/10/2026): se recorrieron inicio, contacto, reservas, tarifas y comparación CSS. Las cinco páginas cargan con lang="es", un h1 y sin scripts; las 30 imágenes cargan y tienen atributo alt; no se encontraron enlaces internos rotos. Se comprobaron también los nombres de archivo con acentos y mayúsculas en las bicicletas.
