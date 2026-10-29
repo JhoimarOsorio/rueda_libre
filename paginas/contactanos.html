@@ -9,19 +9,21 @@
 </head>
 <body>
     <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm" aria-label="Navegación principal">
+    <nav class="navbar navbar-dark bg-primary sticky-top shadow-sm site-navbar" aria-label="Navegación principal">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html"><img src="../img/logo.svg" alt="" width="42" height="42"><span>Rueda Libre</span></a>
-            <div class="navbar-menu ms-auto">
-                <input class="nav-menu-toggle" type="checkbox" id="menuPrincipal" aria-label="Mostrar u ocultar la navegación" aria-controls="menuPrincipalLinks">
-                <label for="menuPrincipal">Menú</label>
-                <ul class="navbar-nav align-items-lg-center" id="menuPrincipalLinks">
+            <a class="navbar-brand" href="../index.html"><img src="../img/logo.svg" alt="" width="42" height="42"><span>Rueda Libre</span></a>
+            <details class="navbar-menu">
+                <summary aria-controls="menuPrincipalLinks">
+                    <span class="visually-hidden">Abrir o cerrar el menú de navegación</span>
+                    <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                </summary>
+                <ul class="navbar-nav" id="menuPrincipalLinks">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="contactanos.html">Contáctanos</a></li>
                 <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
                 <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
                 </ul>
-            </div>
+            </details>
         </div>
     </nav>
     <main class="container py-5" id="contenido-principal" tabindex="-1">
