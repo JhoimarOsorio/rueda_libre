@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link" href="paginas/contactanos.html">Contáctanos</a></li>
                     <li class="nav-item"><a class="nav-link" href="paginas/reservas.html">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas y rutas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="comparacion-css.html">Comparar CSS</a></li>
                 </ul>
             </div>
         </div>
@@ -91,52 +90,41 @@
 
         <section class="container py-5" aria-labelledby="promociones-title">
             <div class="text-center mb-4">
-                <p class="eyebrow mb-2">Inspírate y sal a rodar</p>
+                <p class="eyebrow mb-2">Inspírate y shttp://bataedu.com/al a rodar</p>
                 <h2 class="section-title" id="promociones-title">Planes para descubrir la ciudad</h2>
             </div>
-            <div class="promo-carousel" role="radiogroup" aria-label="Promociones de Rueda Libre">
-                <input class="promo-selector visually-hidden" type="radio" name="promocion" id="promo-alquiler" aria-label="Promoción de alquiler" checked>
-                <input class="promo-selector visually-hidden" type="radio" name="promocion" id="promo-taller" aria-label="Promoción de taller">
-                <input class="promo-selector visually-hidden" type="radio" name="promocion" id="promo-recorrido" aria-label="Promoción de recorrido">
-                <div class="promo-track">
-                    <article class="card promo-slide service-card">
+            <div id="promo-carousel" class="carousel slide promo-carousel auto-carousel" data-carousel-interval="5000" role="region" aria-roledescription="carrusel" aria-label="Promociones de Rueda Libre">
+                <div class="carousel-inner" aria-live="off">
+                    <article class="carousel-item active card promo-slide service-card">
                         <img src="img/alquiler.svg" class="card-img-top promo-image" alt="Bicicleta lista para una aventura urbana">
                         <div class="card-body">
                             <h3 class="card-title h5">Tu próxima aventura empieza aquí</h3>
                             <a href="paginas/reservas.html" class="btn btn-primary btn-sm">Reserva una bicicleta</a>
                         </div>
-                        <div class="card-footer promo-navigation">
-                            <label for="promo-recorrido">Anterior</label>
-                            <label for="promo-taller">Siguiente</label>
-                        </div>
                     </article>
-                    <article class="card promo-slide service-card">
+                    <article class="carousel-item card promo-slide service-card">
                         <img src="img/taller.svg" class="card-img-top promo-image" alt="Taller práctico de mecánica para bicicletas">
                         <div class="card-body">
                             <h3 class="card-title h5">Aprende a cuidar tu bicicleta</h3>
                             <a href="paginas/contactanos.html" class="btn btn-primary btn-sm">Conoce el taller</a>
                         </div>
-                        <div class="card-footer promo-navigation">
-                            <label for="promo-alquiler">Anterior</label>
-                            <label for="promo-recorrido">Siguiente</label>
-                        </div>
                     </article>
-                    <article class="card promo-slide service-card">
+                    <article class="carousel-item card promo-slide service-card">
                         <img src="img/recorridos.svg" class="card-img-top promo-image" alt="Ruta para recorrer Medellín en bicicleta">
                         <div class="card-body">
                             <h3 class="card-title h5">Descubre Medellín con un guía local</h3>
                             <a href="paginas/tarifas.html#recorridos" class="btn btn-primary btn-sm">Consultar recorridos guiados</a>
                         </div>
-                        <div class="card-footer promo-navigation">
-                            <label for="promo-taller">Anterior</label>
-                            <label for="promo-alquiler">Siguiente</label>
-                        </div>
                     </article>
                 </div>
-                <div class="promo-indicators" aria-label="Elegir promoción">
-                    <label for="promo-alquiler" aria-label="Promoción de alquiler"></label>
-                    <label for="promo-taller" aria-label="Promoción de taller"></label>
-                    <label for="promo-recorrido" aria-label="Promoción de recorrido"></label>
+                <div class="promo-controls">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#promo-carousel" data-bs-slide="prev" aria-label="Promoción anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                    <div class="promo-indicators" aria-label="Elegir promoción">
+                        <button class="active" type="button" data-bs-target="#promo-carousel" data-bs-slide-to="0" aria-current="true" aria-label="Promoción de alquiler"></button>
+                        <button type="button" data-bs-target="#promo-carousel" data-bs-slide-to="1" aria-label="Promoción de taller"></button>
+                        <button type="button" data-bs-target="#promo-carousel" data-bs-slide-to="2" aria-label="Promoción de recorrido"></button>
+                    </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#promo-carousel" data-bs-slide="next" aria-label="Siguiente promoción"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
                 </div>
             </div>
         </section>
@@ -172,15 +160,63 @@
                 <h2 class="section-title">Encuéntranos</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
-                <div class="col"><img class="img-fluid rounded-4 location-image" src="img/alquiler.svg" alt="Bicicletas listas para visitar nuestra sede"></div>
-                <div class="col"><img class="img-fluid rounded-4 location-image" src="img/recorridos.svg" alt="Rutas para recorrer Medellín"></div>
+                <div class="col"><a class="location-link" href="paginas/reservas.html" aria-label="Ir a reservas de bicicletas"><img class="img-fluid rounded-4 location-image" src="img/alquiler.svg" alt="Bicicletas disponibles para alquiler"></a></div>
+                <div class="col"><a class="location-link" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" aria-label="Abrir la ubicación en Google Maps"><img class="img-fluid rounded-4 location-image" src="img/recorridos.svg" alt="Rutas para recorrer Medellín"></a></div>
             </div>
             <div class="text-center">
                 <p>Estamos cerca de la estación Estadio. Atendemos de lunes a viernes de 7:00 a. m. a 7:00 p. m. y sábados y domingos de 6:00 a. m. a 2:00 p. m.</p>
                 <a class="btn btn-primary" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Visítanos en el mapa</a>
             </div>
         </section>
+
+        <section class="bg-light py-5" aria-labelledby="consulta-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <header class="text-center mb-4">
+                            <p class="eyebrow mb-2">¿Tienes preguntas?</p>
+                            <h2 class="section-title" id="consulta-title">Escríbenos</h2>
+                            <p class="text-secondary">Déjanos tus datos y te indicaremos cómo continuar.</p>
+                        </header>
+                        <form id="consulta-form" class="card form-card p-3 p-md-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="consulta-nombre">Nombre</label>
+                                <input class="form-control" type="text" id="consulta-nombre" name="nombre" autocomplete="name" required minlength="2">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="consulta-correo">Correo electrónico</label>
+                                <input class="form-control" type="email" id="consulta-correo" name="correo" autocomplete="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="consulta-mensaje">¿En qué podemos ayudarte?</label>
+                                <textarea class="form-control" id="consulta-mensaje" name="mensaje" rows="4" required minlength="10" maxlength="500"></textarea>
+                            </div>
+                            <div class="d-grid d-sm-flex justify-content-sm-end">
+                                <button class="btn btn-primary" type="submit">Enviar consulta</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <div class="modal fade" id="consulta-modal" tabindex="-1" aria-labelledby="consulta-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="consulta-modal-title">Consulta lista</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Este sitio es una demostración estática y no envía ni almacena tus datos. Para contactarnos, escríbenos directamente a <a href="mailto:ruedalibrem@gmail.com">ruedalibrem@gmail.com</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer py-4">
         <div class="container text-center">
@@ -188,5 +224,13 @@
             <p class="mb-0">Contacto: <a href="mailto:ruedalibrem@gmail.com">ruedalibrem@gmail.com</a> · © 2026 Rueda Libre</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="carousel-controls.js"></script>
+    <script>
+        document.getElementById("consulta-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            bootstrap.Modal.getOrCreateInstance(document.getElementById("consulta-modal")).show();
+        });
+    </script>
 </body>
 </html>

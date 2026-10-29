@@ -122,7 +122,7 @@ Mapa de uso de color propuesto para aplicar en el siguiente reto CSS:
 - Enlaces: Verde Ruta #1E7A4F sobre Crema y subrayados para no depender solo del color.
 - Naranja Pedal se reserva para fondos de controles secundarios, bordes y acentos; no usarlo como texto sobre Crema.
 
-La paleta se documenta ahora; sus variables y aplicación visual quedan para el reto CSS siguiente.
+La paleta se documentó y sus colores se aplicaron en las hojas de estilos Bootstrap y CSS propio durante la actualización del 28/10/2026.
 
 10. Publicación v0.2
 
@@ -132,3 +132,53 @@ Repositorio: https://github.com/JhoimarOsorio/rueda_libre.
 Descripción del repositorio: “Sitio accesible de bicicletas, reservas y rutas en Medellin: https://jhoimarosorio.github.io/rueda_libre/”.
 Publicación: rama main, raíz del repositorio. Commit de publicación: 79147f3693cf3dd54726d895d98c49afa19aa906. El despliegue de GitHub Pages terminó correctamente.
 Verificación en línea (27/10/2026): se recorrieron inicio, contacto, reservas, tarifas y comparación CSS. Las cinco páginas cargan con lang="es", un h1 y sin scripts; las 30 imágenes cargan y tienen atributo alt; no se encontraron enlaces internos rotos. Se comprobaron también los nombres de archivo con acentos y mayúsculas en las bicicletas.
+
+11. Actualización de landing, paleta e ilustraciones
+
+Fecha: 28/10/2026.
+
+Landing (index.html): se añadió un formulario de consulta con campos etiquetados y validación nativa para nombre, correo y mensaje. Al enviarlo, se abre un modal del componente Bootstrap 5.3.8, con cierre accesible y un aviso de que la página estática no transmite ni almacena los datos. Se agregó el bundle JavaScript de Bootstrap y el controlador para abrir el modal después de validar el formulario. Para recibir consultas reales todavía se requiere conectar un servidor o servicio de formularios.
+
+Paleta: se aplicaron los colores documentados en bootstrap-theme.css y style.css. Verde Ruta #1E7A4F queda como color primario; Azul Noche #14213D como texto; Crema #FAF6EF como fondo; Gris Asfalto #5B6470 como texto secundario; y Naranja Pedal #F39A2B como acento. Se actualizaron botones, enlaces, fondos claros, tablas, bordes y sombras. El naranja se utiliza como acento, no como texto sobre crema.
+
+Ilustraciones: se aplicó un filtro CSS selectivo a logo.svg, alquiler.svg, taller.svg y recorridos.svg para cambiar su tono azul al verde de la marca. Las fotografías JPEG no se modificaron. El filtro se definió tanto en bootstrap-theme.css como en style.css, para que también se aplique en la página comparativa.
+
+Comprobaciones: el editor no reportó errores en los HTML y CSS modificados. En navegador se verificó que el modal abre y cierra tras el envío de un formulario válido, que no hay desbordamiento horizontal a 390 px y que los SVG seleccionados reciben el filtro de color. La validación no incluyó envío real ni persistencia de datos.
+
+12. Enlaces e interacción de imágenes de ubicación
+
+Fecha: 28/10/2026.
+
+En index.html se envolvieron las ilustraciones de la sección “Encuéntranos” con enlaces: la imagen de bicicletas lleva a paginas/reservas.html y la ilustración de rutas abre Google Maps, igual que el enlace de ubicación de esa sección. Se añadieron nombres accesibles para ambos enlaces.
+
+En bootstrap-theme.css se agregó un realce al pasar el mouse y al enfocar con teclado: elevación y sombra en el enlace, escala suave en la imagen y contorno visible de foco. El contenedor recorta la escala para evitar que la imagen invada el contenido vecino.
+
+Comprobaciones: el editor no reportó errores. En navegador se verificaron los dos destinos, el efecto hover (elevación de 4 px y escala 1.04) y el contorno de foco por teclado.
+
+13. Retirada del enlace de comparación CSS de la navegación
+
+Fecha: 28/10/2026.
+
+Se retiró el enlace “Comparar CSS” de los menús principales de inicio, contacto, reservas y tarifas. También se retiró de comparacion-css.html el enlace de navegación que apuntaba a la propia página. La página comparativa se conserva como recurso independiente del ejercicio del Día 2 y mantiene su enlace de regreso al inicio.
+
+Comprobaciones: el editor no reportó errores en las cinco páginas HTML modificadas.
+
+14. Carruseles automáticos de promociones y bicicletas
+
+Fecha: 28/10/2026.
+
+En index.html, la sección “Planes para descubrir la ciudad” pasó a usar el componente Carousel de Bootstrap y cambia de promoción automáticamente cada 5 segundos. Incluye controles anterior/siguiente, indicadores y un botón para pausar o reanudar.
+
+En paginas/reservas.html se crearon carruseles independientes para bicicletas urbanas, de montaña y eléctricas, también con intervalo de 5 segundos, controles manuales, contador de opciones y botón para pausar o reanudar. Cada diapositiva conserva su propia casilla; las selecciones permanecen marcadas al cambiar de bicicleta y se pueden elegir varias.
+
+Se agregó carousel-controls.js para inicializar los carruseles y gestionar pausa, reanudación, foco de teclado, pestañas ocultas y la preferencia prefers-reduced-motion. El cambio automático se pausa al entrar con teclado a los controles o a una opción; con movimiento reducido, inicia pausado. Bootstrap Bundle se carga en la página de reservas.
+
+Comprobaciones: en navegador se verificó el avance automático de las promociones y las categorías de bicicletas, que las casillas seleccionadas persisten al cambiar de diapositiva, que el control de pausa mantiene la rotación detenida y que prefers-reduced-motion deja pausados los tres carruseles de bicicletas. El editor no reportó errores en HTML, CSS ni JavaScript.
+
+15. Rotación continua y pausa por selección
+
+Fecha: 28/10/2026.
+
+Se retiraron los botones “Pausar” y “Reanudar” de las promociones y de los tres carruseles de bicicletas. Se desactivó la pausa automática por hover y foco. La rotación de promociones se detiene cuando se elige manualmente una diapositiva; en reservas, cada carrusel se detiene cuando se marca una bicicleta de su categoría y vuelve a rotar si se desmarca la última opción seleccionada de esa categoría. Las flechas manuales siguen disponibles. Se conserva la excepción de accesibilidad: con prefers-reduced-motion los carruseles no comienzan a rotar.
+
+Comprobaciones: el editor no reportó errores y no quedan referencias a los controles de pausa. En navegador se verificó que el temporizador está activo al inicio, que elegir una promoción detiene su temporizador y que marcar una bicicleta detiene el temporizador de su categoría.
