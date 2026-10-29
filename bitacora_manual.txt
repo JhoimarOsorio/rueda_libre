@@ -1,0 +1,298 @@
+BITACORA NUEVA: GUIA PARA CREAR Y ENTENDER RUEDA LIBRE
+
+Guia paso a paso para personas que quieren construir esta pagina manualmente y estan empezando a aprender programacion.
+
+Proyecto: Rueda Libre
+Tipo de sitio: pagina informativa para alquiler de bicicletas y recorridos guiados en Medellin.
+Tecnologias: HTML para el contenido, CSS para la apariencia, Bootstrap para componentes y diseno adaptable, y JavaScript para algunas interacciones.
+
+IMPORTANTE: El proyecto es una pagina estatica. Puede mostrar formularios y validar algunos campos en el navegador, pero no cuenta con un servidor que reciba, guarde o procese reservas y mensajes.
+
+1. QUE ES CADA TECNOLOGIA
+
+HTML es el esqueleto de la pagina. Con HTML se escriben los titulos, parrafos, imagenes, botones, enlaces, tablas, formularios y secciones.
+
+CSS es la apariencia. Define colores, tamanos, espacios, alineacion, bordes, sombras, animaciones y como se adapta el contenido a pantallas pequenas.
+
+Bootstrap es una biblioteca de CSS y JavaScript que ya trae componentes y estilos preparados, como botones, tarjetas, grillas, tablas, formularios y carruseles. Se carga desde internet y se complementa con los estilos propios del proyecto.
+
+JavaScript permite agregar comportamientos que no se consiguen solo con HTML y CSS, por ejemplo actualizar el contador de un carrusel o mostrar un modal despues de validar un formulario.
+
+Una analogia sencilla: HTML construye las piezas, CSS las decora y organiza, y JavaScript hace que algunas piezas reaccionen a las acciones de la persona.
+
+2. ARCHIVOS DEL PROYECTO
+
+La carpeta rueda_libre contiene estos archivos y subcarpetas principales:
+
+index.html
+    Pagina de inicio. Presenta el negocio, sus servicios, promociones, ubicacion y formulario de consulta.
+
+bootstrap-theme.css
+    Personaliza los colores y componentes de Bootstrap que se usan en las paginas principales.
+
+style.css
+    Contiene estilos CSS propios y se utiliza, entre otros lugares, en la pagina comparativa.
+
+carousel-controls.js
+    Controla el inicio, la pausa y el contador de los carruseles de promociones y bicicletas.
+
+comparacion-css.html
+    Pagina de demostracion para comparar una grilla hecha con CSS propio con otra hecha con Bootstrap.
+
+paginas/contactanos.html
+    Formulario de contacto.
+
+paginas/reservas.html
+    Formulario para elegir bicicleta, duracion, fecha, hora y otras opciones.
+
+paginas/tarifas.html
+    Tablas con precios de alquiler y recorridos guiados.
+
+img/
+    Logotipo, ilustraciones y fotografias de bicicletas.
+
+Las rutas de archivos dependen de la ubicacion. Desde index.html se escribe, por ejemplo, img/logo.svg. Desde paginas/reservas.html se usa ../img/urbana.jpeg porque primero hay que subir un nivel desde paginas y luego entrar en img. El texto ../ significa "subir a la carpeta anterior".
+
+3. COMO PREPARAR LOS ARCHIVOS
+
+Para empezar manualmente:
+
+1. Crea una carpeta llamada rueda_libre.
+2. Dentro, crea index.html, bootstrap-theme.css, style.css y carousel-controls.js.
+3. Crea las carpetas paginas e img.
+4. Dentro de paginas crea contactanos.html, reservas.html y tarifas.html.
+5. Copia las imagenes que se usaran en img.
+6. Abre index.html en un navegador para revisar el resultado.
+
+Es importante escribir los nombres de archivos igual que aparecen en la carpeta. En algunos servidores, las mayusculas y minusculas son diferentes. Los nombres con espacios, tildes o parentesis deben coincidir exactamente con el nombre real del archivo.
+
+4. CREAR EL ESQUELETO DE UNA PAGINA HTML
+
+Cada pagina empieza con una estructura parecida a esta:
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Titulo de la pagina</title>
+</head>
+<body>
+    <nav aria-label="Navegacion principal">...</nav>
+    <main id="contenido-principal" tabindex="-1">...</main>
+    <footer>...</footer>
+</body>
+</html>
+
+<!DOCTYPE html> indica al navegador que se usa HTML moderno.
+lang="es" informa que el contenido esta en espanol.
+charset="UTF-8" permite mostrar correctamente tildes y otros caracteres.
+viewport ayuda a que el contenido se ajuste a moviles.
+title es el titulo que aparece en la pestana del navegador.
+nav agrupa los enlaces para moverse entre paginas.
+main contiene el contenido principal de esa pagina.
+footer contiene datos finales, como el nombre y el correo de contacto.
+
+Los puntos suspensivos solo representan contenido que se debe agregar; no se escriben asi como pagina terminada.
+
+5. CARGAR BOOTSTRAP Y LOS ESTILOS DEL SITIO
+
+En el head de las paginas principales se carga primero Bootstrap y luego el tema propio:
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap-theme.css">
+
+En una pagina dentro de paginas, el segundo enlace debe ser ../bootstrap-theme.css.
+
+El orden importa: primero se carga Bootstrap y despues el tema local, para que las reglas propias puedan personalizar algunos estilos de Bootstrap.
+
+Bootstrap utiliza clases dentro del HTML. Por ejemplo:
+
+<div class="container py-5">
+    <h1 class="text-center">Explora Medellin</h1>
+</div>
+
+container centra el contenido y limita su ancho. py-5 agrega espacio arriba y abajo. text-center centra el texto. Las clases se combinan para conseguir un diseno sin tener que escribir una regla CSS para cada elemento.
+
+Para que los componentes interactivos de Bootstrap funcionen, como los carruseles y el modal de la portada, se carga el bundle de JavaScript antes del cierre de body:
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+El bundle ya incluye las dependencias necesarias para esos componentes.
+
+6. CONSTRUIR LA NAVEGACION
+
+La barra de navegacion se repite en las paginas para que la persona pueda ir a Inicio, Contactanos, Reservas y Tarifas y rutas. Cada enlace usa href para indicar el archivo de destino.
+
+Desde index.html, el enlace a reservas es:
+
+<a href="paginas/reservas.html">Reservas</a>
+
+Desde paginas/reservas.html, el enlace de regreso a inicio es:
+
+<a href="../index.html">Inicio</a>
+
+El menu movil usa una casilla de verificacion HTML y una etiqueta asociada. En CSS se ocultan o muestran los enlaces dependiendo de si la casilla esta marcada. La etiqueta "Menu" permite activar el control con teclado o al tocarlo en pantalla.
+
+El atributo aria-label da un nombre entendible a una region o control para tecnologias de asistencia. aria-controls indica que elemento controla el menu. aria-current="page" identifica el enlace de la pagina actual.
+
+7. CONTENIDO DE LA PAGINA DE INICIO
+
+La portada de index.html se divide en secciones:
+
+Presentacion:
+    Muestra el logotipo, el titulo principal, una breve explicacion y botones para reservar o consultar tarifas.
+
+Servicios:
+    Presenta alquiler, talleres y recorridos guiados en tarjetas con ilustraciones, descripcion y enlaces.
+
+Promociones:
+    Presenta una promocion a la vez en un carrusel. Incluye flechas e indicadores para cambiar manualmente.
+
+Informacion del negocio:
+    Explica quienes son, como alquilar y los beneficios.
+
+Ubicacion:
+    Muestra imagenes que enlazan a reservas o a Google Maps, junto con horarios y un enlace al mapa.
+
+Consulta:
+    Incluye un formulario de nombre, correo y mensaje. Al completarlo correctamente, JavaScript muestra un modal informativo.
+
+Para agregar una imagen, se usa img con src para la ruta y alt para describir la imagen. Un texto alternativo ayuda cuando la imagen no carga y permite que un lector de pantalla explique su contenido. Si una imagen solo repite una marca que ya aparece en texto, puede tener alt vacio para no repetirla.
+
+8. PAGINA DE TARIFAS Y RUTAS
+
+En paginas/tarifas.html se usan tablas para ordenar informacion que se compara por columnas.
+
+Una tabla se organiza con:
+
+table: toda la tabla.
+caption: una descripcion o titulo de la tabla.
+thead: fila o filas de encabezados.
+tbody: filas con la informacion.
+tr: una fila.
+th: una celda que sirve como encabezado.
+td: una celda de datos.
+
+La pagina presenta una tabla para los precios de bicicletas urbanas, de montana y electricas, y otra para los recorridos guiados. La clase table-responsive de Bootstrap ayuda a contener tablas anchas en pantallas pequenas. El enlace Reservar una bicicleta dirige a paginas/reservas.html.
+
+9. PAGINA DE CONTACTO
+
+En paginas/contactanos.html se crea un formulario con campos para nombre, telefono, correo, asunto y mensaje. Cada campo debe tener una etiqueta que lo identifique.
+
+Ejemplo:
+
+<label for="correo">Correo electronico</label>
+<input id="correo" name="correo" type="email" required>
+
+for="correo" y id="correo" conectan la etiqueta con el campo. name es el nombre del dato del formulario. type="email" pide un formato de correo. required significa que el navegador no debe aceptar el formulario si ese campo esta vacio.
+
+El formulario tambien utiliza reglas como minlength, maxlength y pattern. El navegador muestra su validacion antes de intentar enviar los datos. Esta validacion ayuda a detectar errores, pero no guarda ni envia por si sola un mensaje a la empresa.
+
+10. PAGINA DE RESERVAS
+
+En paginas/reservas.html se solicita nombre, telefono y correo, y luego se permite escoger una o mas bicicletas. Las opciones se agrupan por categorias: urbanas, de montana y electricas.
+
+Los campos de duracion y recorrido son listas desplegables. Fecha y hora usan los controles propios del navegador. La cantidad es un numero con minimo 1 y maximo 10. Los comentarios son opcionales.
+
+Cada bicicleta tiene una casilla checkbox. Varias casillas pueden compartir el mismo name para que el formulario represente una seleccion de varias bicicletas. Las casillas se encuentran dentro de las diapositivas de los carruseles: al cambiar de foto, la seleccion de cada opcion se conserva.
+
+El formulario tiene mensajes de error visuales para ayudar a entender campos incompletos. Sin embargo, la pagina no tiene un sistema conectado para procesar, confirmar ni guardar una reserva. El modal que se abre mediante el enlace "Ver ejemplo de modal de confirmacion" es una demostracion visual hecha con CSS y un fragmento de la URL; no confirma una reserva real.
+
+11. COMO FUNCIONAN LOS CARRUSELES
+
+El carrusel de promociones esta en index.html. Los carruseles de modelos de bicicletas estan en paginas/reservas.html. Cada carrusel se construye con un contenedor, una parte llamada carousel-inner, varias diapositivas carousel-item y controles para avanzar o retroceder.
+
+La clase active marca la diapositiva que se muestra inicialmente. Los botones utilizan data-bs-target para apuntar al id del carrusel y data-bs-slide para indicar si avanzan o retroceden. Los indicadores de las promociones usan data-bs-slide-to para ir a una diapositiva concreta.
+
+data-carousel-interval="5000" configura el tiempo del carrusel en cinco segundos. El archivo carousel-controls.js busca los elementos con la clase auto-carousel y los inicializa con Bootstrap.
+
+Ese archivo tambien:
+
+- Actualiza el contador de diapositivas de los carruseles de bicicletas.
+- Detiene la rotacion cuando la persona cambia manualmente de diapositiva.
+- Detiene el carrusel de una categoria cuando se marca una bicicleta de esa categoria.
+- Permite que esa categoria vuelva a rotar si se desmarcan todas sus opciones.
+- Evita que el carrusel avance mientras la pestana del navegador esta oculta.
+- Respeta la preferencia del sistema prefers-reduced-motion y no inicia la rotacion si la persona prefiere menos movimiento.
+
+Los controles visibles permiten cambiar de diapositiva manualmente incluso si la rotacion automatica se detuvo.
+
+12. FORMULARIO DE CONSULTA Y MODAL DE LA PORTADA
+
+El formulario de consulta de index.html tiene un id para que JavaScript pueda encontrarlo. Cuando el navegador intenta enviarlo, primero valida los campos marcados como obligatorios. Si los datos no cumplen las reglas, el navegador muestra el error y no ejecuta el envio normal.
+
+Cuando los datos son validos, el controlador JavaScript escucha el evento submit, llama a preventDefault() para impedir el envio normal y muestra un modal de Bootstrap. El modal explica que el sitio es una demostracion estatica y ofrece el correo de contacto.
+
+Esto solo muestra un mensaje en pantalla; no transmite los datos. Para convertirlo en un formulario real hace falta conectar un servicio de formularios o desarrollar un servidor que reciba los datos. No se deben pedir datos sensibles en un formulario que no tiene un destino seguro y definido.
+
+13. ESTILOS Y COLORES
+
+bootstrap-theme.css cambia el aspecto de Bootstrap: colores principales, botones, enlaces, tablas, tarjetas y componentes de la pagina. style.css contiene reglas para el ejemplo de CSS propio y otros estilos de la comparacion.
+
+Una regla CSS tiene un selector y propiedades:
+
+body {
+    color: #14213d;
+    background-color: #faf6ef;
+}
+
+body selecciona el cuerpo de la pagina. color cambia el color del texto y background-color cambia el fondo. Las llaves contienen las reglas y cada instruccion termina con punto y coma.
+
+Paleta de la marca:
+
+Verde Ruta #1E7A4F: color principal y botones principales.
+Azul Noche #14213D: texto y contraste sobre el fondo naranja.
+Crema #FAF6EF: fondo general.
+Gris Asfalto #5B6470: texto secundario.
+Naranja Pedal #F39A2B: acentos, bordes y elementos secundarios.
+
+Las hojas de estilos tambien definen espacios, bordes redondeados, sombras, imagenes de tamano adecuado y efectos al pasar el mouse o usar el teclado. El filtro hue-rotate se aplica solo a las ilustraciones SVG seleccionadas para ajustar su tono. No cambia las fotografias JPEG.
+
+14. PAGINA DE COMPARACION
+
+comparacion-css.html muestra una misma idea de tarjetas en dos versiones. La primera utiliza clases propias, como servicios y servicio, que se definen en style.css. La segunda utiliza container, row, col y card de Bootstrap.
+
+La pagina sirve para aprender que se puede construir una distribucion con CSS escrito para el proyecto o aprovechar componentes ya preparados por Bootstrap. Se conserva separada del menu principal.
+
+15. ACCESIBILIDAD: QUE SE HIZO Y POR QUE
+
+Accesibilidad significa hacer que el sitio se pueda utilizar de distintas maneras, por ejemplo con teclado o con lector de pantalla.
+
+El enlace "Saltar al contenido principal" permite evitar repetir el menu en cada visita. Se hace visible al enfocarlo y lleva al main.
+
+tabindex="-1" en main permite que el enlace de salto mueva el foco al contenido sin agregar main a cada paso normal de la tecla Tab.
+
+Los encabezados mantienen un orden logico. Cada pagina tiene un titulo principal y las secciones usan encabezados de nivel inferior.
+
+Las etiquetas de formulario explican para que sirve cada campo. Los botones y enlaces tienen textos descriptivos. aria-label nombra algunos controles cuya funcion podria no ser clara solo por su aspecto.
+
+Los indicadores y controles de carrusel tienen nombres accesibles. aria-live="off" evita que un lector de pantalla anuncie automaticamente cada cambio de diapositiva. Los carruseles respetan la preferencia de movimiento reducido.
+
+El menu y los enlaces deben poder utilizarse con teclado. Se agregan estilos de foco visibles para saber que elemento esta seleccionado.
+
+16. COMO PROBAR EL SITIO
+
+1. Abre index.html en un navegador.
+2. Recorre los enlaces de Inicio, Contactanos, Reservas y Tarifas y rutas.
+3. Comprueba que cada imagen aparezca y que no haya rutas incorrectas.
+4. Reduce el ancho de la ventana para revisar el menu y las columnas en movil.
+5. Usa Tab y Shift+Tab para recorrer enlaces y controles con el teclado.
+6. Pulsa Enter o espacio para activar enlaces y controles.
+7. Envia formularios vacios para ver la validacion nativa del navegador.
+8. Completa un formulario con datos de prueba y observa el resultado.
+9. Cambia las diapositivas con las flechas y verifica el comportamiento automatico.
+10. En reservas, marca y desmarca bicicletas y confirma que la rotacion de su categoria se detiene o se reanuda segun las selecciones.
+11. Recuerda que las pruebas del formulario solo verifican la interfaz: no existe almacenamiento de reservas ni envio de consultas.
+
+17. COMO PUBLICAR
+
+El sitio puede publicarse en un alojamiento para paginas estaticas, por ejemplo GitHub Pages. Se suben los archivos respetando la estructura de carpetas y se configura el alojamiento para servir index.html como pagina inicial.
+
+Despues de publicar, se deben abrir las paginas en la direccion publica y volver a revisar imagenes, enlaces y formularios. Algunos errores de rutas que no aparecen al probar localmente pueden notarse al publicar, especialmente si el nombre del archivo usa mayusculas, espacios o tildes.
+
+18. RESUMEN DEL FUNCIONAMIENTO ACTUAL
+
+La persona entra a la pagina de inicio, conoce los servicios y puede visitar tarifas, contacto o reservas mediante el menu y los botones. Las tarifas se muestran en tablas. Los formularios permiten ingresar datos y el navegador valida reglas basicas. Los carruseles muestran promociones o modelos de bicicletas y pueden operarse con controles manuales. Las imagenes de ubicacion enlazan a reservas o a Google Maps.
+
+El sitio no tiene una base de datos ni un servidor conectado. Por eso, una reserva o consulta no se guarda ni llega automaticamente al correo. El modal de consulta solo informa que se trata de una demostracion. Para recibir solicitudes reales es necesario agregar un servicio de envio o crear un backend y conectar el formulario a ese servicio.
