@@ -132,7 +132,7 @@ Desde paginas/reservas.html, el enlace de regreso a inicio es:
 
 <a href="../index.html">Inicio</a>
 
-El menu movil usa una casilla de verificacion HTML y una etiqueta asociada. En CSS se ocultan o muestran los enlaces dependiendo de si la casilla esta marcada. La etiqueta "Menu" permite activar el control con teclado o al tocarlo en pantalla.
+El menu usa los elementos nativos details y summary de HTML. El resumen aparece como un boton de tres lineas en el lado izquierdo de la barra; al activarlo con clic, teclado o pantalla tactil, se despliegan los enlaces debajo. CSS dibuja el icono y posiciona el menu. El logotipo y el nombre de Rueda Libre quedan centrados en la parte superior en todas las paginas HTML.
 
 El atributo aria-label da un nombre entendible a una region o control para tecnologias de asistencia. aria-controls indica que elemento controla el menu. aria-current="page" identifica el enlace de la pagina actual.
 
@@ -269,7 +269,7 @@ Las etiquetas de formulario explican para que sirve cada campo. Los botones y en
 
 Los indicadores y controles de carrusel tienen nombres accesibles. aria-live="off" evita que un lector de pantalla anuncie automaticamente cada cambio de diapositiva. Los carruseles respetan la preferencia de movimiento reducido.
 
-El menu y los enlaces deben poder utilizarse con teclado. Se agregan estilos de foco visibles para saber que elemento esta seleccionado.
+El menu y los enlaces deben poder utilizarse con teclado. El elemento summary permite abrir y cerrar el menu con teclado y mantiene el estado expandido de forma nativa. Se agregan estilos de foco visibles para saber que elemento esta seleccionado.
 
 16. COMO PROBAR EL SITIO
 

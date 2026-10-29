@@ -182,3 +182,13 @@ Fecha: 28/10/2026.
 Se retiraron los botones “Pausar” y “Reanudar” de las promociones y de los tres carruseles de bicicletas. Se desactivó la pausa automática por hover y foco. La rotación de promociones se detiene cuando se elige manualmente una diapositiva; en reservas, cada carrusel se detiene cuando se marca una bicicleta de su categoría y vuelve a rotar si se desmarca la última opción seleccionada de esa categoría. Las flechas manuales siguen disponibles. Se conserva la excepción de accesibilidad: con prefers-reduced-motion los carruseles no comienzan a rotar.
 
 Comprobaciones: el editor no reportó errores y no quedan referencias a los controles de pausa. En navegador se verificó que el temporizador está activo al inicio, que elegir una promoción detiene su temporizador y que marcar una bicicleta detiene el temporizador de su categoría.
+
+16. Cabecera centrada y menú desplegable
+
+Fecha: 28/10/2026.
+
+Se unificó la cabecera de las cinco páginas HTML. El logotipo y el nombre “Rueda Libre” quedan centrados en la parte superior. Los enlaces de navegación se agruparon en un menú lateral izquierdo que se abre y se cierra con un botón visual de tres líneas.
+
+El control se implementó con los elementos nativos details y summary de HTML, por lo que funciona con clic, teclado y pantalla táctil sin JavaScript. Se aplicaron estilos comunes en bootstrap-theme.css y se adaptó style.css para que las reglas de listas y navegación de la página comparativa no afecten el menú nuevo.
+
+Comprobaciones: el editor no reportó errores en las cinco páginas, las dos hojas CSS ni los enlaces de navegación. En navegador se verificó la marca centrada en la portada, que el menú se despliega al activar el botón y que la lista del menú no hereda los adornos de listas de la página comparativa.

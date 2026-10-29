@@ -41,6 +41,17 @@ body {
     background-color: var(--bs-primary) !important;
 }
 
+.site-navbar {
+    z-index: 1030;
+    padding: 0.5rem 0;
+}
+
+.site-navbar > .container {
+    position: relative;
+    min-height: 4.5rem;
+    justify-content: center;
+}
+
 .btn-primary {
     --bs-btn-bg: #1e7a4f;
     --bs-btn-border-color: #1e7a4f;
@@ -70,10 +81,20 @@ body {
 }
 
 .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin: 0;
     font-weight: 700;
+    color: #fff;
+    font-size: 1.35rem;
+    white-space: nowrap;
 }
 
 .navbar-brand img {
+    width: 48px;
+    height: 48px;
     object-fit: contain;
 }
 
@@ -81,13 +102,95 @@ body {
     font-weight: 600;
 }
 
-.nav-menu-toggle,
-.navbar-menu > label {
+.navbar-menu {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+}
+
+.navbar-menu > summary {
+    display: flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+}
+
+.navbar-menu > summary::-webkit-details-marker {
     display: none;
 }
 
-.navbar-menu .navbar-nav {
+.navbar-menu > summary:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 3px;
+}
+
+.menu-icon {
+    display: flex;
+    width: 1.35rem;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+
+.menu-icon > span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-menu[open] .menu-icon > span:first-child {
+    transform: translateY(0.42rem) rotate(45deg);
+}
+
+.navbar-menu[open] .menu-icon > span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu[open] .menu-icon > span:last-child {
+    transform: translateY(-0.42rem) rotate(-45deg);
+}
+
+.navbar-menu > .navbar-nav {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    left: 0;
+    display: none !important;
+    min-width: 13rem;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.2rem;
+    padding: 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    background: var(--bs-primary);
+    box-shadow: 0 0.75rem 1.5rem rgba(20, 33, 61, 0.2);
+}
+
+.navbar-menu[open] > .navbar-nav {
     display: flex !important;
+}
+
+.navbar-menu .nav-link {
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.4rem;
+    color: #fff;
+}
+
+.navbar-menu .nav-link:hover,
+.navbar-menu .nav-link:focus-visible,
+.navbar-menu .nav-link.active {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.18);
 }
 
 .hero-logo {
@@ -381,65 +484,6 @@ img[src$="recorridos.svg"] {
 
 .site-footer a:hover {
     color: #fae1bf;
-}
-
-@media (max-width: 991.98px) {
-    .navbar > .container {
-        flex-wrap: wrap;
-    }
-
-    .navbar-menu {
-        flex-basis: 100%;
-        margin-top: 0.5rem;
-    }
-
-    .nav-menu-toggle {
-        display: block;
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-    }
-
-    .navbar-menu > label {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.4rem 0.75rem;
-        border: 1px solid rgba(255, 255, 255, 0.65);
-        border-radius: 0.5rem;
-        color: #fff;
-        cursor: pointer;
-        font-weight: 600;
-    }
-
-    .navbar-menu > label::after {
-        content: "+";
-        font-size: 1.2rem;
-        line-height: 1;
-    }
-
-    .nav-menu-toggle:checked + label::after {
-        content: "−";
-    }
-
-    .nav-menu-toggle:focus-visible + label {
-        outline: 3px solid rgba(255, 255, 255, 0.75);
-        outline-offset: 2px;
-    }
-
-    .navbar-menu .navbar-nav {
-        display: none !important;
-    }
-
-    .nav-menu-toggle:checked ~ .navbar-nav {
-        display: flex !important;
-    }
-
-    .navbar-menu .navbar-nav {
-        align-items: stretch !important;
-        padding-top: 0.5rem;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
