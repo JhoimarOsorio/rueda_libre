@@ -7,6 +7,7 @@
     <title>Rueda Libre | Bicicletas y recorridos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap-theme.css">
+    <link rel="stylesheet" href="carousel.css">
 </head>
 <body>
     <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
@@ -95,38 +96,12 @@
                 <p class="eyebrow mb-2">Inspírate y shttp://bataedu.com/al a rodar</p>
                 <h2 class="section-title" id="promociones-title">Planes para descubrir la ciudad</h2>
             </div>
-            <div id="promo-carousel" class="carousel slide promo-carousel auto-carousel" data-carousel-interval="5000" role="region" aria-roledescription="carrusel" aria-label="Promociones de Rueda Libre">
-                <div class="carousel-inner" aria-live="off">
-                    <article class="carousel-item active card promo-slide service-card">
-                        <img src="img/alquiler.svg" class="card-img-top promo-image" alt="Bicicleta lista para una aventura urbana">
-                        <div class="card-body">
-                            <h3 class="card-title h5">Tu próxima aventura empieza aquí</h3>
-                            <a href="paginas/reservas.html" class="btn btn-primary btn-sm">Reserva una bicicleta</a>
-                        </div>
-                    </article>
-                    <article class="carousel-item card promo-slide service-card">
-                        <img src="img/taller.svg" class="card-img-top promo-image" alt="Taller práctico de mecánica para bicicletas">
-                        <div class="card-body">
-                            <h3 class="card-title h5">Aprende a cuidar tu bicicleta</h3>
-                            <a href="paginas/contactanos.html" class="btn btn-primary btn-sm">Conoce el taller</a>
-                        </div>
-                    </article>
-                    <article class="carousel-item card promo-slide service-card">
-                        <img src="img/recorridos.svg" class="card-img-top promo-image" alt="Ruta para recorrer Medellín en bicicleta">
-                        <div class="card-body">
-                            <h3 class="card-title h5">Descubre Medellín con un guía local</h3>
-                            <a href="paginas/tarifas.html#recorridos" class="btn btn-primary btn-sm">Consultar recorridos guiados</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="promo-controls">
-                    <button class="carousel-control-prev" type="button" data-bs-target="#promo-carousel" data-bs-slide="prev" aria-label="Promoción anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-                    <div class="promo-indicators" aria-label="Elegir promoción">
-                        <button class="active" type="button" data-bs-target="#promo-carousel" data-bs-slide-to="0" aria-current="true" aria-label="Promoción de alquiler"></button>
-                        <button type="button" data-bs-target="#promo-carousel" data-bs-slide-to="1" aria-label="Promoción de taller"></button>
-                        <button type="button" data-bs-target="#promo-carousel" data-bs-slide-to="2" aria-label="Promoción de recorrido"></button>
-                    </div>
-                    <button class="carousel-control-next" type="button" data-bs-target="#promo-carousel" data-bs-slide="next" aria-label="Siguiente promoción"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+            <div id="promo-carousel"  class="three-d-carousel promo-carousel" data-carousel="promotions" data-image-prefix="img/" data-carousel-interval="5000" role="region" aria-roledescription="carrusel" aria-label="Promociones de Rueda Libre">
+                <div class="three-d-track" aria-live="off"></div>
+                <div class="three-d-controls">
+                    <button class="three-d-button three-d-prev" type="button" aria-label="Promoción anterior">‹</button>
+                    <span class="three-d-count" aria-hidden="true"></span>
+                    <button class="three-d-button three-d-next" type="button" aria-label="Siguiente promoción">›</button>
                 </div>
             </div>
         </section>
@@ -227,7 +202,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="carousel-controls.js"></script>
+    <script src="carousel.js"></script>
     <script>
         document.getElementById("consulta-form").addEventListener("submit", (event) => {
             event.preventDefault();

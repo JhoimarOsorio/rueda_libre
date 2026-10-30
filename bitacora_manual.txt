@@ -1,6 +1,6 @@
 BITACORA NUEVA: GUIA PARA CREAR Y ENTENDER RUEDA LIBRE
 
-Guia paso a paso para personas que quieren construir esta pagina manualmente y estan empezando a aprender programacion.
+Guia paso a paso para personas que quieren construir esta pagina y estan empezando a aprender programacion.
 
 Proyecto: Rueda Libre
 Tipo de sitio: pagina informativa para alquiler de bicicletas y recorridos guiados en Medellin.

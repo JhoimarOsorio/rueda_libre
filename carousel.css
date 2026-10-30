@@ -1,0 +1,182 @@
+
+.three-d-carousel {
+    position: relative;
+    display: grid;
+    height: clamp(25rem, 55vw, 36rem);
+    place-items: center;
+    overflow: hidden;
+    padding-bottom: 3.75rem;
+    background: var(--fondo, #faf6ef);
+    perspective: 1400px;
+}
+
+.three-d-track {
+    position: absolute;
+    inset: 0 0 3.75rem;
+    transform-style: preserve-3d;
+
+
+}
+
+.three-d-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: min(76vw, 35rem);
+    height: min(29rem, calc(100% - 1rem));
+    flex-direction: column;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 650ms cubic-bezier(0.2, 0.75, 0.25, 1), opacity 650ms ease, filter 650ms ease;
+}
+
+.three-d-promo-slide {
+    border-color: rgba(184, 19, 19, 0.16);
+    background: #fff;
+    box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.three-d-promo-image {
+    width: 100%;
+    height: 68%;
+    flex: 0 0 68%;
+    padding: 1rem;
+    object-fit: contain;
+    border-radius: 0;
+    background: #f1eee6;
+    filter: hue-rotate(-67deg) brightness(var(--carousel-brightness, 1));
+}
+
+.three-d-promo-slide .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+}
+
+.three-d-promo-slide .card-title {
+    margin: 0 0 0.75rem;
+    color: var(--site-ink, #14213d);
+}
+
+.three-d-promo-slide .btn {
+    margin-top: auto;
+}
+
+.three-d-slide img:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.three-d-controls {
+    position: absolute;
+    z-index: 20;
+    bottom: 0.65rem;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transform: translateX(-50%);
+}
+
+.three-d-button {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    padding: 0 0 0.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    color: #fff;
+    background: var(--bs-primary, #1e7a4f);
+    font: inherit;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.three-d-button:hover {
+    background: var(--bs-primary, #1e7a4f);
+    transform: scale(1.08);
+}
+
+.three-d-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.three-d-count {
+    min-width: 3rem;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+.three-d-carousel.bike-carousel {
+    height: clamp(19rem, 36vw, 24rem);
+    max-width: 32rem;
+    margin-inline: auto;
+}
+
+.three-d-carousel.bike-carousel .three-d-count {
+    color: var(--primario, #1e7a4f);
+}
+
+.three-d-bike-slide {
+    width: min(72vw, 22rem);
+    height: min(18rem, calc(100% - 0.5rem));
+    overflow: visible;
+}
+
+.three-d-bike-slide .bike-option {
+    height: 100%;
+}
+
+.three-d-bike-slide .bike-option-content {
+    height: 100%;
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
+}
+
+.three-d-bike-slide .bike-option-image {
+    height: 100%;
+    padding: 0.65rem;
+    object-fit: contain;
+    background: #f1eee6;
+    filter: brightness(var(--carousel-brightness, 1));
+}
+
+.three-d-bike-slide .bike-option-input:checked + .visually-hidden + .bike-option-content {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.45), 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.three-d-bike-slide .bike-option-input:focus-visible + .visually-hidden + .bike-option-content {
+    outline: 3px solid rgba(var(--bs-primary-rgb), 0.7);
+    outline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+    .three-d-carousel {
+        height: 25rem;
+    }
+
+    .three-d-slide {
+        width: min(78vw, 31rem);
+    }
+
+    .three-d-promo-slide .card-body {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .three-d-slide,
+    .three-d-button {
+        transition-duration: 0.01ms;
+    }
+}

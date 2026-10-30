@@ -6,6 +6,7 @@
     <title>Reservas | Rueda Libre</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../bootstrap-theme.css">
+    <link rel="stylesheet" href="../carousel.css">
 </head>
 <body>
     <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
@@ -57,127 +58,36 @@
 
                                 <section class="bike-category" aria-labelledby="urbanas-title">
                                     <h2 class="h5 section-title mb-3" id="urbanas-title">Bicicletas urbanas</h2>
-                                    <div id="urbanas-carousel" class="carousel slide auto-carousel bike-carousel" data-carousel-interval="5000" role="region" aria-roledescription="carrusel" aria-label="Opciones de bicicletas urbanas">
-                                        <div class="carousel-inner" aria-live="off">
-                                            <div class="carousel-item active" role="group" aria-roledescription="diapositiva" aria-label="Opción 1 de 3">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Urbana">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/urbana.jpeg" alt="Bicicleta urbana, opción 1" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 2 de 3">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Urbana 2">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/urbana1.jpeg" alt="Bicicleta urbana, opción 2" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 3 de 3">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Urbana 3">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/urbana%20(2).jpeg" alt="Bicicleta urbana, opción 3" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                        </div>
-                                        <div class="bike-carousel-controls">
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#urbanas-carousel" data-bs-slide="prev" aria-label="Opción urbana anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-                                            <span class="bike-carousel-count" aria-hidden="true">1 / 3</span>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#urbanas-carousel" data-bs-slide="next" aria-label="Opción urbana siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                                    <div id="urbanas-carousel" class="three-d-carousel bike-carousel" data-carousel="urbanas" data-image-prefix="../img/" data-carousel-interval="4000" role="region" aria-roledescription="carrusel" aria-label="Opciones de bicicletas urbanas">
+                                        <div class="three-d-track" aria-live="off"></div>
+                                        <div class="three-d-controls">
+                                            <button class="three-d-button three-d-prev" type="button" aria-label="Opción urbana anterior">‹</button>
+                                            <span class="three-d-count" aria-hidden="true">1 / 4</span>
+                                            <button class="three-d-button three-d-next" type="button" aria-label="Opción urbana siguiente">›</button>
                                         </div>
                                     </div>
                                 </section>
 
                                 <section class="bike-category" aria-labelledby="montana-title">
                                     <h2 class="h5 section-title mb-3" id="montana-title">Bicicletas de montaña</h2>
-                                    <div id="montana-carousel" class="carousel slide auto-carousel bike-carousel" data-carousel-interval="5000" role="region" aria-roledescription="carrusel" aria-label="Opciones de bicicletas de montaña">
-                                        <div class="carousel-inner" aria-live="off">
-                                            <div class="carousel-item active" role="group" aria-roledescription="diapositiva" aria-label="Opción 1 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Montaña">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/montaña1.jpeg" alt="Bicicleta de montaña, opción 1" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 2 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Montaña 2">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/MOntaña2.jpeg" alt="Bicicleta de montaña, opción 2" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 3 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Montaña 3">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/Montaña%20(9).jpeg" alt="Bicicleta de montaña, opción 3" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 4 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Montaña 4">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/montaña%20(10).jpeg" alt="Bicicleta de montaña, opción 4" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                        </div>
-                                        <div class="bike-carousel-controls">
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#montana-carousel" data-bs-slide="prev" aria-label="Opción de montaña anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-                                            <span class="bike-carousel-count" aria-hidden="true">1 / 4</span>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#montana-carousel" data-bs-slide="next" aria-label="Opción de montaña siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                                    <div id="montana-carousel" class="three-d-carousel bike-carousel" data-carousel="montana" data-image-prefix="../img/" data-carousel-interval="4000" role="region" aria-roledescription="carrusel" aria-label="Opciones de bicicletas de montaña">
+                                        <div class="three-d-track" aria-live="off"></div>
+                                        <div class="three-d-controls">
+                                            <button class="three-d-button three-d-prev" type="button" aria-label="Opción de montaña anterior">‹</button>
+                                            <span class="three-d-count" aria-hidden="true">1 / 4</span>
+                                            <button class="three-d-button three-d-next" type="button" aria-label="Opción de montaña siguiente">›</button>
                                         </div>
                                     </div>
                                 </section>
 
                                 <section class="bike-category" aria-labelledby="electricas-title">
                                     <h2 class="h5 section-title mb-3" id="electricas-title">Bicicletas eléctricas</h2>
-                                    <div id="electricas-carousel" class="carousel slide auto-carousel bike-carousel" data-carousel-interval="5000" role="region" aria-roledescription="carrusel" aria-label="Opciones de bicicletas eléctricas">
-                                        <div class="carousel-inner" aria-live="off">
-                                            <div class="carousel-item active" role="group" aria-roledescription="diapositiva" aria-label="Opción 1 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Eléctrica">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/electrica.jpeg" alt="Bicicleta eléctrica, opción 1" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 2 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Eléctrica 2">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/electrica1.jpeg" alt="Bicicleta eléctrica, opción 2" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 3 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Eléctrica 3">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/electrica2.jpeg" alt="Bicicleta eléctrica, opción 3" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                            <div class="carousel-item" role="group" aria-roledescription="diapositiva" aria-label="Opción 4 de 4">
-                                            <label class="bike-option">
-                                                <input class="bike-option-input" type="checkbox" name="tipo" value="Eléctrica 4">
-                                                <span class="bike-option-content">
-                                                    <img src="../img/electrica4.jpeg" alt="Bicicleta eléctrica, opción 4" class="bike-option-image">
-                                                </span>
-                                            </label>
-                                            </div>
-                                        </div>
-                                        <div class="bike-carousel-controls">
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#electricas-carousel" data-bs-slide="prev" aria-label="Opción eléctrica anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-                                            <span class="bike-carousel-count" aria-hidden="true">1 / 4</span>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#electricas-carousel" data-bs-slide="next" aria-label="Opción eléctrica siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                                    <div id="electricas-carousel" class="three-d-carousel bike-carousel" data-carousel="electricas" data-image-prefix="../img/" data-carousel-interval="4000" role="region" aria-roledescription="carrusel" aria-label="Opciones de bicicletas eléctricas">
+                                        <div class="three-d-track" aria-live="off"></div>
+                                        <div class="three-d-controls">
+                                            <button class="three-d-button three-d-prev" type="button" aria-label="Opción eléctrica anterior">‹</button>
+                                            <span class="three-d-count" aria-hidden="true">1 / 4</span>
+                                            <button class="three-d-button three-d-next" type="button" aria-label="Opción eléctrica siguiente">›</button>
                                         </div>
                                     </div>
                                 </section>
@@ -243,6 +153,6 @@
 
     <footer class="site-footer py-4"><div class="container text-center"><p class="mb-1"><strong>Rueda Libre</strong> · Alquiler de bicicletas y recorridos guiados</p><p class="mb-0">Contacto: <a href="mailto:ruedalibrem@gmail.com">ruedalibrem@gmail.com</a> · © 2026 Rueda Libre</p></div></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../carousel-controls.js"></script>
+    <script src="../carousel.js"></script>
 </body>
 </html>
